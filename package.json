@@ -1,0 +1,20 @@
+{
+  "name": "me-poupe-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jaovw/me-poupe-api.git",
+  "author": "jaovw <joojvw@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.3"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsc"
+  }
+}
