@@ -19,7 +19,7 @@ function resultadoMedia(req: Request, res: Response) {
 
     const resultado: number = media(a,b)
 
-    res.json({
+    res.status(200).json({
         resultado: resultado
     })
 }
