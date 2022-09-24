@@ -1,7 +1,8 @@
 import { Router } from 'express'
-import { realizaMedia } from './controllers/mediaController'
+import { resultadoMedia } from './controllers/mediaController'
 
 const router = Router()
 
-router.get('/', realizaMedia)
+router.get('/', resultadoMedia)
+
 export default router
