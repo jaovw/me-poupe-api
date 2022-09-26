@@ -10,7 +10,7 @@ function resultadoMedia(req: Request, res: Response) {
     const { a, b } = req.body
 
     if(!a || !b){
-        return res.status(400).json({message: 'Favor utililizar o body corretamente ... '})
+        return res.status(400).json({message: 'Favor utilizar o body corretamente ...'})
     }
 
     if(typeof a !== 'number' || typeof b !== 'number'){
@@ -24,4 +24,4 @@ function resultadoMedia(req: Request, res: Response) {
     })
 }
 
-export { resultadoMedia }
+export { resultadoMedia, media }
