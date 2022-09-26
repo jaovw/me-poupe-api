@@ -11,6 +11,7 @@ Respeitando os seguintes requisitos
   - clean clode
   - tratamento de erros
   - testes automatizados
+  - logs
   
   ## __CALCÚLO MÉDIA__ :heavy_division_sign:
   ### Descrição
@@ -47,4 +48,8 @@ Respeitando os seguintes requisitos
    yarn dev
   ```
   
-  ## __TESTES__
+  ## __TESTES__ :bulb:
+  Utilizando a biblioteca __jest__
+  ```
+   yarn test
+  ```
