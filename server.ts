@@ -9,6 +9,6 @@ const app: Application = express()
 app.use(express.json())
 app.use(router)
 
-const server = app.listen(port, (): void => logger.info(`Rodando na porta:${port}`))
+const server = app.listen(port, (): void => logger.info(`Rodando em http://localhost:${port}/`))
 
 export { app, server }
