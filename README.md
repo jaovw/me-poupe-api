@@ -30,7 +30,9 @@ Respeitando os seguintes requisitos
   
   
   ## __DOCKER__ :whale2:
-  
+  ```
+   docker-compose up
+  ```
   ## __DEPLOY__ :rocket:
   Dependencias
   ```
