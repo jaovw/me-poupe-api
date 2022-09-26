@@ -1,12 +1,13 @@
-import express from 'express'
-
+import express, { Application } from 'express'
 import router from './src/routes'
-const port = process.env.PORT || 5000
 
-const app = express()
+const port = 5000
+
+const app: Application = express()
 
 app.use(express.json())
-
 app.use(router)
 
-app.listen(port, () => console.info(`Rodando na porta:${port}`))
+const server = app.listen(port, (): void => console.info(`Rodando na porta:${port}`))
+
+export { app, server }
