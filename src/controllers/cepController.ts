@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Request, Response } from 'express'
+import logger from '../utils/logger'
 
 type Cep = {
     cep: string,
@@ -33,20 +34,36 @@ async function getCep(req: Request, res: Response) {
             }
         )
 
-        res.json({
-            requisicao: param,
+        const msg: string = JSON.stringify(data)
+        const regex: any = new RegExp('true')
+
+        if(regex.test(msg)) {
+            logger.error({
+                CEP: param,
+                mensagem: 'Nao foi possivel encontrar o CEP solicitado'
+            })
+            res.status(400).json({
+                mensagem: `CEP ${param} inexistente`
+            })
+        }
+
+        res.status(200).json({
             resutado: data
         })
-
+        logger.info('Requisicao ok')
+        
     } catch (e) {
         if (axios.isAxiosError(e)) {
+            logger.error({
+                status: 400,
+                code: e.code,
+                message: e.message,
+            },'Erro em query string, necessario utilizar um CEP completo')
+
             return res.status(400).json({
-                message:e.message
+                erro:e.message,
+                mensagem: 'Necessario utilizar um CEP valido'
             });
-        } else {
-            return res.status(400).json({
-                message:'An unexpected error occurred'
-            })
         }
     }
 }
