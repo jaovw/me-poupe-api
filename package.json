@@ -23,6 +23,6 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules server.ts",
     "build": "tsc",
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "jest"
   }
 }
